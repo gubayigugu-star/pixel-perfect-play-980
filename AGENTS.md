@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- AI calls go through server functions in src/lib/ai.functions.ts using the streaming helper in src/lib/ai.server.ts — keeps the key server-side and avoids buffered timeouts.
+- User data (tasks, history, favorites, settings) lives in the browser store in src/lib/store.ts until accounts are added — no backend yet.
+- Tools hand off content via a `prefill` search param — keeps the cross-tool connections simple and linkable.
