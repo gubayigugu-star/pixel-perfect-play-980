@@ -14,7 +14,7 @@ export async function callAI(opts: {
   schema?: { name: string; schema: Record<string, unknown> };
   effort?: "low" | "medium" | "high";
 }): Promise<string> {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env["LOVABLE_API_KEY"];
   if (!apiKey) throw new AIError(401, "AI is not configured.");
   const res = await fetch(GATEWAY, {
     method: "POST",

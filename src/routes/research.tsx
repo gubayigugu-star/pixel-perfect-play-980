@@ -42,7 +42,7 @@ function ResearchPage() {
     setSavedId(actions.addHistory({ kind: "research", title: q.slice(0, 90), content: r.data }));
   }
 
-  const summary = out.split(/##\s*Key findings/i)[0].slice(0, 2500);
+  const summary = (out.split(/##\s*Key findings/i)[0] ?? "").slice(0, 2500);
 
   return (
     <div className="space-y-6">

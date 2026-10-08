@@ -28,7 +28,7 @@ function EmailPage() {
   const { prefill } = Route.useSearch();
   const { settings } = useStore();
   const [message, setMessage] = useState(prefill ?? "");
-  const [type, setType] = useState(TYPES[0]);
+  const [type, setType] = useState<string>("Follow-up");
   const [tone, setTone] = useState(settings.defaultTone);
   const [length, setLength] = useState("Medium");
   const [subject, setSubject] = useState("");
